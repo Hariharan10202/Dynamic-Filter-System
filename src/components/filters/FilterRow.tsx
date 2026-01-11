@@ -149,6 +149,7 @@ export const FilterRow = ({
         alignItems: { xs: "start" },
         gap: 2,
         p: 2,
+        paddingY: 5,
         pt: { xs: showRemove ? 5 : 2, md: 2 },
         backgroundColor: "rgba(129, 140, 248, 0.05)",
         borderRadius: 2,

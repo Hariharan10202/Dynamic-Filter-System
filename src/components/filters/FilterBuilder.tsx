@@ -154,7 +154,7 @@ export const FilterBuilder = ({
         </Box>
       </Box>
 
-      <Divider sx={{ mb: 2, borderColor: "divider" }} />
+      <Divider sx={{ marginY: 2, borderColor: "divider" }} />
 
       {conditions.length === 0 ? (
         <Box

@@ -60,29 +60,53 @@ export const InputAmountRange = ({
   };
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 1, width: "100%" }}>
-      <TextField
-        size="small"
-        value={value.min ?? ""}
-        onChange={handleMinChange}
-        placeholder="Min"
-        error={!!minError}
-        helperText={minError}
-      />
-      <Typography
-        variant="body2"
-        sx={{ color: "text.secondary", flexShrink: 0 }}
+    <Box sx={{ position: "relative", width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          width: "100%",
+        }}
       >
-        to
-      </Typography>
-      <TextField
-        size="small"
-        value={value.max ?? ""}
-        onChange={handleMaxChange}
-        placeholder="Max"
-        error={!!maxError}
-        helperText={maxError}
-      />
+        <TextField
+          size="small"
+          value={value.min ?? ""}
+          onChange={handleMinChange}
+          placeholder="Min"
+          error={!!minError}
+        />
+
+        <Typography
+          variant="body2"
+          sx={{ color: "text.secondary", flexShrink: 0 }}
+        >
+          to
+        </Typography>
+
+        <TextField
+          size="small"
+          value={value.max ?? ""}
+          onChange={handleMaxChange}
+          placeholder="Max"
+          error={!!maxError}
+        />
+      </Box>
+
+      {(minError || maxError) && (
+        <Typography
+          variant="caption"
+          sx={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            mt: 0.5,
+            color: "error.main",
+          }}
+        >
+          {minError || maxError}
+        </Typography>
+      )}
     </Box>
   );
 };
